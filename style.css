@@ -1,0 +1,49 @@
+/* Page visibility system */
+.page { display: none; }
+.page.active { display: block; }
+
+/* Role-based visibility */
+body.not-authenticated .role-logged-in  { display: none; }
+body.authenticated     .role-logged-out { display: none; }
+.role-admin                             { display: none; }
+.role-user                              { display: none; }
+body.authenticated:not(.is-admin) .role-user { display: block; }
+body.is-admin          .role-admin      { display: block; }
+
+/* Layout */
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* Cards */
+.card {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Table headers */
+.table th {
+    background-color: #343a40;
+    color: white;
+}
+
+/* Badges */
+.badge { padding: 0.45em 0.75em; }
+
+/* Action buttons spacing */
+.action-buttons button { margin-right: 4px; margin-bottom: 4px; }
+
+/* Profile */
+.profile-info .row { margin-bottom: 14px; }
+.profile-info strong { display: inline-block; width: 120px; }
+
+/* Request item rows */
+.request-item { align-items: center; }
+
+/* Toast */
+.toast { min-width: 260px; }
+#toast-container { z-index: 9999; }
+
+/* Responsive */
+.table-responsive { overflow-x: auto; }
